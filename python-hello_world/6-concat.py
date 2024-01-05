@@ -2,7 +2,5 @@
 
 str1 = "Holberton"
 str2 = "School"
-
-if __name__ == "__main__":
-    str1 += " " + str2
-    print("Welcome to {}!".format(str1))
+str1 = str1 + " " + str2
+print("Welcome to {}!".format(str1))
