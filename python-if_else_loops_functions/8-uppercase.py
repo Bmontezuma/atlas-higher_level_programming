@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
-def uppercase(s):
-    result = ""
-    for char in s:
-        result += chr(ord(char) - 32) if 'a' <= char <= 'z' else char
-    print("{}".format(result), end="")
+def print_last_digit(number):
+    if isinstance(number, int):
+        last_digit = abs(number) % 10
+        print(last_digit, end="")
+        return last_digit
+    else:
+        raise TypeError("Input must be an integer")
