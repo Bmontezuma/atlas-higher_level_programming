@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-def print_last_digit(number):
-    if isinstance(number, int):
-        last_digit = abs(number) % 10
-        print(last_digit, end="")
-        return last_digit
-    else:
-        raise TypeError("Input must be an integer")
+def uppercase(s):
+    for char in s:
+        ascii_value = ord(char)
+        if 97 <= ascii_value <= 122:
+            ascii_value -= 32
+        print("{}".format(chr(ascii_value)), end="")
+    print()
