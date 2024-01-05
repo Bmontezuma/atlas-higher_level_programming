@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import random
-# This will assign a random number to 'number'
+
 number = random.randint(-10, 10)
+
+print(number)
 
 if number > 0:
     print("is positive")
