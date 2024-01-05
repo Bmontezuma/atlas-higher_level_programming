@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
-for i in range(97, 123):
-    if chr(i) not in {'q', 'e'}:
-        print("{}" .format(chr(i)), end="")
+for char in range(ord('a'), ord('z') + 1):
+    if chr(char) not in ['e', 'q']:
+        print("{}".format(chr(char)), end="")
