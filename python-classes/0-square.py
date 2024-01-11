@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 
-"""
-This module defines a Square class.
-"""
-
-
 class Square:
     """
-    This class represents a square.
+    This is a class representing a square.
+    It currently has no attributes or methods.
     """
     pass
