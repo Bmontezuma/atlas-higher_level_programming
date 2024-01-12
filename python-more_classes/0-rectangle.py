@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 """
-This is an empty class Rectangle.
+s module contains an empty class Rectangle.
 """
-pass
+
+
+class Rectangle:
+    """
+    This is an empty class Rectangle.
+    """
+    pass
