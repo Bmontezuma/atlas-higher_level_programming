@@ -1,0 +1,19 @@
+# Test Case 1
+>>> add_integer(5, 3)
+8
+
+# Test Case 2
+>>> add_integer(-10, 6)
+-4
+
+# Test Case 3
+>>> add_integer(0, 0)
+0
+
+# Test Case 4
+>>> add_integer(2.5, 3.5)
+6
+
+# Test Case 5
+>>> add_integer(-2.8, 5.8)
+3
