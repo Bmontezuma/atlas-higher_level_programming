@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-Module contains a class Rectangle.
-"""
-
-
 class Rectangle:
     """
     This class defines a rectangle.
