@@ -1,0 +1,22 @@
+# Test case: Basic text with separators '.', '?', and ':'
+>>> from 5-text_indentation import text_indentation
+>>> text_indentation("Holberton School")
+Holberton School
+
+>>> text_indentation("Holberton.School")
+Holberton.School
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton. School?
+How are you: John
+
+# Test case: Size as an integer
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+# Test case: Text with no separators
+>>> text_indentation("This is a test without separators")
+This is a test without separators
+
