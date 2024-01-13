@@ -1,3 +1,5 @@
+# 3-say_my_name.txt
+
 # Test case: First and Last Name
 >>> say_my_name("John", "Doe")
 My name is John Doe
@@ -9,5 +11,5 @@ My name is Alice
 # Test case: First Name not a string
 >>> say_my_name(123, "Smith")
 Traceback (most recent call last):
-...
+  ...
 TypeError: first_name must be a string or last_name must be a string
