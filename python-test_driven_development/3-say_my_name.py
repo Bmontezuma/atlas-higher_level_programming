@@ -16,8 +16,9 @@ def say_my_name(first_name, last_name=""):
     Returns:
         None
     """
+    error_msg = "first_name must be a string or last_name must be a string"
     if not isinstance(first_name, str) or not isinstance(last_name, str):
-        raise TypeError("first_name or last_name must be string")
+        raise TypeError(error_msg)
 
     full_name = f"My name is {first_name} {last_name}"
     print(full_name)
