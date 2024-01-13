@@ -17,29 +17,31 @@ def text_indentation(text):
     Returns:
         None
     """
+    # Check if the text is a string
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    separators = ['.', '?', ':']
-    current_line = ""
+    # Replace all whitespace characters with spaces
+    text = text.replace("\t", " ").replace("\n", " ").replace("\r", " ")
+
+    # Initialize a flag variable
     prev_punct = False
 
-    # replace all whitespace characters with spaces
-    text = text.replace("\\t", " ").replace("\\n", " ").replace("\\r", " ")
-
+    # Loop through each character in the text
     for char in text:
-        current_line += char
+        # Print the character
+        print(char, end="")
 
-        if char in separators:
-            # print the current line without leading or trailing spaces
-            print(current_line.strip())
-            print()
-            current_line = ""
+        # Check if the character is a punctuation mark
+        if char in [".", "?", ":"]:
+            # Print two new lines
+            print("\n\n", end="")
+            # Set the flag to True
             prev_punct = True
         else:
-            # reset the flag if the character is not a punctuation mark
+            # Reset the flag to False
             prev_punct = False
 
-    # print the remaining line if it is not empty or a punctuation mark
-    if current_line and not prev_punct:
-        print(current_line.strip())
+    # Print a new line if the last character was not a punctuation mark
+    if not prev_punct:
+        print()
