@@ -22,6 +22,9 @@ def text_indentation(text):
 
     separators = ['.', '?', ':']
     current_line = ""
+    prev_punct = False
+
+    text = text.replace("\\t", " ").replace("\\n", " ").replace("\\r", " ")
 
     for char in text:
         current_line += char
@@ -30,6 +33,9 @@ def text_indentation(text):
             print(current_line.strip())
             print()
             current_line = ""
+            prev_punct = True
+        else:
+            prev_punct = False
 
-    if current_line:
+    if current_line and not prev_punct:
         print(current_line.strip())
