@@ -1,0 +1,14 @@
+# Test case: First and Last Name
+>>> say_my_name("John", "Doe")
+Correct output - case: First and Last Name
+
+# Test case: First Name only
+>>> say_my_name("Alice")
+Correct output - case: First Name only
+
+# Test case: First Name not a string
+>>> say_my_name(123, "Smith")
+Correct output - case: First Name not a string
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
