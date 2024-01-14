@@ -1,8 +1,16 @@
->>> Rectangle = __import__('1-rectangle').Rectangle
+"""
+This is doctest file to test Rectangle class.
+
+>>> from 1-rectangle import Rectangle
+
+# Test case 1: Create a rectangle with width 2 and height 4
 >>> my_rectangle = Rectangle(2, 4)
->>> print(my_rectangle.__dict__)
+>>> my_rectangle.__dict__
 {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+# Test case 2: Modify width to 10 and height to 3
 >>> my_rectangle.width = 10
 >>> my_rectangle.height = 3
->>> print(my_rectangle.__dict__)
+>>> my_rectangle.__dict__
 {'_Rectangle__height': 3, '_Rectangle__width': 10}
+"""
