@@ -18,6 +18,47 @@ class Rectangle:
     >>> r.height = 3
     >>> r.__dict__
     {'_Rectangle__width': 10, '_Rectangle__height': 3}
+
+    Additional error cases:
+    >>> try:
+    ...     myrectangle = Rectangle(2, -3)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [ValueError] Height must be >= 0
+
+    >>> try:
+    ...     myrectangle = Rectangle(-2, 3)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [ValueError] Width must be >= 0
+
+    >>> try:
+    ...     myrectangle = Rectangle(2, 3)
+    ...     myrectangle.width = -4
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [ValueError] Width must be >= 0
+
+    >>> try:
+    ...     myrectangle = Rectangle(2, 3)
+    ...     myrectangle.width = "4"
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [TypeError] Width must be an integer!
+
+    >>> try:
+    ...     myrectangle = Rectangle(2, 3)
+    ...     myrectangle.height = -4
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [ValueError] Height must be >= 0
+
+    >>> try:
+    ...     myrectangle = Rectangle(2, 3)
+    ...     myrectangle.height = "4"
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    # Expecting: [TypeError] Height must be an integer!
     """
 
     def __init__(self, width=0, height=0):
