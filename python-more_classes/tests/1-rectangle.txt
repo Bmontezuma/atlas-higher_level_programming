@@ -1,5 +1,5 @@
 """
-This is doctest file to test Rectangle class.
+This is a doctest file to test Rectangle class.
 
 >>> from 1-rectangle import Rectangle
 
@@ -13,4 +13,50 @@ This is doctest file to test Rectangle class.
 >>> my_rectangle.height = 3
 >>> my_rectangle.__dict__
 {'_Rectangle__height': 3, '_Rectangle__width': 10}
+
+# Test case 3: Instantiate with negative height
+>>> try:
+...     my_rectangle = Rectangle(2, -3)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Height must be >= 0
+
+# Test case 4: Instantiate with negative width
+>>> try:
+...     my_rectangle = Rectangle(-2, 3)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Width must be >= 0
+
+# Test case 5: Set negative width after instantiation
+>>> try:
+...     my_rectangle = Rectangle(2, 3)
+...     my_rectangle.width = -4
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Width must be >= 0
+
+# Test case 6: Set non-integer width after instantiation
+>>> try:
+...     my_rectangle = Rectangle(2, 3)
+...     my_rectangle.width = "4"
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Width must be an integer!
+
+# Test case 7: Set negative height after instantiation
+>>> try:
+...     my_rectangle = Rectangle(2, 3)
+...     my_rectangle.height = -4
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Height must be >= 0
+
+# Test case 8: Set non-integer height after instantiation
+>>> try:
+...     my_rectangle = Rectangle(2, 3)
+...     my_rectangle.height = "4"
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Height must be an integer!
 """
