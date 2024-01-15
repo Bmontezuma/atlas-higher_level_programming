@@ -1,25 +1,46 @@
 #!/usr/bin/python3
-"""This module contains a function to print square with the character #."""
 
-
-def print_square(size):
+def matrix_divided(matrix, div):
     """
-    Print a square with the character #.
+    This function divides all elements of a matrix.
 
     Args:
-        size (int): The size length of the square.
-
-    Raises:
-        TypeError: If size is not an integer.
-        ValueError: If size is less than 0.
+        matrix (list): A list of lists of integers or floats.
+        div (int or float): An integer or float.
 
     Returns:
-        None
-    """
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
+        list: A new matrix divided by div, rounded to 2 decimal places.
 
-    for _ in range(size):
-        print("#" * size)
+    Raises:
+        TypeError: If matrix is not a matrix of integers/floats.
+        TypeError: If div is not a number.
+        ZeroDivisionError: If div is zero.
+
+    Examples:
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
+        [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+        Traceback (most recent call last):
+        ZeroDivisionError: division by zero
+    """
+    if not isinstance(matrix, list) or \
+            not all(isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must matrix of integers/floats")
+
+    if len(set(len(row) for row in matrix)) != 1:
+        raise TypeError("Each row of the matrix must have the same size")
+
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for element in row:
+            new_row.append(round(element / div, 2))
+        new_matrix.append(new_row)
+
+    return new_matrix
