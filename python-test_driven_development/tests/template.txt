@@ -25,3 +25,4 @@ b must be an integer
 # Expecting a TypeError with the message "a must be an integer"
 >>> add_integer(None)
 a must be an integer
+
