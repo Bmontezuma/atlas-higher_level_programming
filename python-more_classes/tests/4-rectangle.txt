@@ -1,1 +1,39 @@
-#!/usr/bin/python3
+with open("doctest.txt", "w") as file:
+    file.write("""\
+# Run with: python3 -m doctest -v 4-rectangle.py
+# File: 4-rectangle.py
+
+# Test case 1
+>>> my_rectangle = Rectangle(2, 4)
+>>> print(str(my_rectangle))
+'##\\n##\\n##\\n##\\n'
+
+>>> print(repr(my_rectangle))
+'Rectangle(2, 4)'
+
+# Test case 2
+>>> my_rectangle = Rectangle(2, 4)
+>>> print(my_rectangle)
+'##\\n##\\n##\\n##\\n'
+
+# Test case 3
+>>> my_rectangle = Rectangle(2, 4)
+>>> my_rectangle_rep = repr(my_rectangle)
+>>> new_rectangle = eval(my_rectangle_rep)
+>>> print(new_rectangle)
+'##\\n##\\n##\\n##\\n'
+
+# Test case 4
+>>> my_rectangle = Rectangle(2, 4)
+>>> my_rectangle_rep = repr(my_rectangle)
+>>> new_rectangle = eval(my_rectangle_rep)
+>>> print(repr(new_rectangle))
+'Rectangle(2, 4)'
+
+# Test case 5
+>>> my_rectangle = Rectangle(2, 4)
+>>> my_rectangle_rep = repr(my_rectangle)
+>>> new_rectangle = eval(my_rectangle_rep)
+>>> print(my_rectangle != new_rectangle)
+True
+""")
