@@ -1,51 +1,16 @@
-#!/usr/bin/python3
-"""
-This module provides a function to add two integers.
-
-Usage:
-    from 0-add_integer import add_integer
-    result = add_integer(a, b)
-
-Args:
-    a (int or float): The first integer.
-    b (int or float): The second integer. Defaults to 98.
-
-Returns:
-    int: The sum of a and b.
-
-Raises:
-    TypeError: If a or b is not an integer or float.
-
-Example:
-    >>> add_integer(1, 2)
-    3
-    >>> add_integer(100, -2)
-    98
-    >>> add_integer(2)
-    100
-    >>> add_integer(100.3, -2)
-    98
-    >>> add_integer("School")
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer or float
-    >>> add_integer(None)
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer or float
-"""
-
-
 def add_integer(a, b=98):
-    """Adds two integers."""
-    if not isinstance(a, (int, float)):
+    """
+    Add two integers.
+
+    Prototype: def add_integer(a, b=98):
+    a and b must be integers or floats, raise a TypeError exception message
+    a must be an integer or b must be an integer
+    a and b must be first casted to integers if they are float
+    Returns an integer: the addition of a and b
+    You are not allowed to import any module
+    """
+    if type(a) not in (int, float):
         raise TypeError("a must be an integer or float")
-    if not isinstance(b, (int, float)):
+    if type(b) not in (int, float):
         raise TypeError("b must be an integer or float")
     return int(a) + int(b)
-
-
-if __name__ == "__main__":
-    # Example usage
-    result = add_integer(3, 4)
-    print(result)
