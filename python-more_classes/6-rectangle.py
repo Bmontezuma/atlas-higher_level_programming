@@ -154,6 +154,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
