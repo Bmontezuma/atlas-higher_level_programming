@@ -1,6 +1,15 @@
-"""
->>> text_indentation("This is a sentence. Another one? Yes, indeed.")
-This is a sentence.
-Another one?
-Yes, indeed.
-"""
+$ cat 6-main.py
+#!/usr/bin/python3
+max_integer = __import__('6-max_integer').max_integer
+
+print(max_integer([1, 2, 3, 4]))
+print(max_integer([1, 3, 4, 2]))
+$ ./6-main.py
+4
+4
+$ python3 -m unittest tests.6-max_integer_test
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
