@@ -1,1 +1,107 @@
-#!/usr/bin/python3
+Rectangle Class
+===============
+
+This module contains the Rectangle class, which represents a rectangle with specified width and height.
+
+Usage
+-----
+
+1. Import the Rectangle class:
+
+    ```python
+    from 6-rectangle import Rectangle
+    ```
+
+2. Create instances of Rectangle and check the number of instances:
+
+    ```python
+    # Create rectangles
+    r1 = Rectangle(2, 4)
+    r2 = Rectangle(2, 4)
+
+    # Check the number of instances
+    Rectangle.number_of_instances
+    ```
+    Expected Output:
+    ```
+    2
+    ```
+
+3. Delete instances and check the number of instances:
+
+    ```python
+    # Delete one instance
+    del r1
+
+    # Check the number of instances
+    Rectangle.number_of_instances
+    ```
+    Expected Output:
+    ```
+    1
+    ```
+
+    ```python
+    # Delete the remaining instance
+    del r2
+
+    # Check the number of instances
+    Rectangle.number_of_instances
+    ```
+    Expected Output:
+    ```
+    0
+    ```
+
+4. Additional doctests for class methods:
+
+    ```python
+    # Create a rectangle
+    r = Rectangle(3, 4)
+
+    # Calculate area
+    r.area()
+    ```
+    Expected Output:
+    ```
+    12
+    ```
+
+    ```python
+    # Calculate perimeter
+    r.perimeter()
+    ```
+    Expected Output:
+    ```
+    14
+    ```
+
+    ```python
+    # Print the string representation of the rectangle
+    print(r)
+    ```
+    Expected Output:
+    ```
+    ###
+    ###
+    ###
+    ###
+    ```
+
+    ```python
+    # Get a string representation for eval()
+    repr(r)
+    ```
+    Expected Output:
+    ```
+    'Rectangle(3, 4)'
+    ```
+
+    ```python
+    # Delete the instance
+    del r
+    ```
+    Expected Output:
+    ```
+    Bye rectangle...
+    ```

@@ -1,1 +1,63 @@
-#!/usr/bin/python3
+Rectangle Class
+===============
+
+This module contains the Rectangle class, which represents a rectangle with specified width and height.
+
+Usage
+-----
+
+1. Import the Rectangle class:
+
+    ```python
+    from 5-rectangle import Rectangle
+    ```
+
+2. Create a Rectangle instance with optional width and height:
+
+    ```python
+    # Create a rectangle with default width and height (both 0)
+    rectangle1 = Rectangle()
+
+    # Create a rectangle with specified width and height
+    rectangle2 = Rectangle(3, 5)
+    ```
+
+3. Access and modify the width and height attributes:
+
+    ```python
+    # Get width and height
+    width = rectangle2.width
+    height = rectangle2.height
+
+    # Set new width and height values
+    rectangle2.width = 7
+    rectangle2.height = 10
+    ```
+
+4. Calculate the area and perimeter:
+
+    ```python
+    # Get area and perimeter
+    area = rectangle2.area()
+    perimeter = rectangle2.perimeter()
+    ```
+
+5. Display the rectangle:
+
+    ```python
+    # Print the string representation of the rectangle
+    print(rectangle2)
+    ```
+
+6. Delete a rectangle instance:
+
+    ```python
+    # Delete a rectangle
+    del rectangle1
+    ```
+
+    This will output:
+
+    ```
+    Bye rectangle...
+    ```

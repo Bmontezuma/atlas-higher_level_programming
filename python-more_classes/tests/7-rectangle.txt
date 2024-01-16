@@ -1,1 +1,17 @@
-#!/usr/bin/python3
+root@8c8af43804c1:/atlas-higher_level_programming/python-more_classes# python3 -m doctest -v 7-rectangle.py
+11 items had no tests:
+    7-rectangle
+    7-rectangle.Rectangle
+    7-rectangle.Rectangle.__del__
+    7-rectangle.Rectangle.__init__
+    7-rectangle.Rectangle.__repr__
+    7-rectangle.Rectangle.__str__
+    7-rectangle.Rectangle.area
+    7-rectangle.Rectangle.height
+    7-rectangle.Rectangle.perimeter
+    7-rectangle.Rectangle.print_symbol
+    7-rectangle.Rectangle.width
+0 tests in 11 items.
+0 passed and 0 failed.
+Test passed.
+root@8c8af43804c1:/atlas-higher_level_programming/python-more_classes#
