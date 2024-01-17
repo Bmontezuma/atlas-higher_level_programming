@@ -1,37 +1,28 @@
 #!/usr/bin/python3
 """
-Module to find the max integer in a list
-
-Example:
-    >>> max_integer([1, 2, 3, 4])
-    4
-    >>> max_integer([1, 3, 4, 2])
-    4
-    >>> max_integer([])
-    None
-    >>> max_integer([-5, -2, -8, -1])
-    -1
-    >>> max_integer([1, 4, 4, 3])
-    4
+Unittests for max_integer function
 """
 
 
-def max_integer(lst=[]):
-    """Function to find and return the max integer in a list of integers
-    If the list is empty, the function returns None
+import unittest
+from my_module import max_integer
 
-    Args:
-        lst (list): List of integers.
+class TestMaxInteger(unittest.TestCase):
 
-    Returns:
-        int or None: The maximum integer in the list, or None if the list is empty.
-    """
-    if not lst:
-        return None
-    result = lst[0]
-    i = 1
-    while i < len(lst):
-        if lst[i] > result:
-            result = lst[i]
-        i += 1
-    return result
+    # Test case 1
+    def test_positive_numbers(self):
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+
+    # Test case 2
+    def test_unsorted_numbers(self):
+        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+
+    # Test case 3
+    def test_empty_list(self):
+        self.assertIsNone(max_integer([]))
+
+    # Add more test cases as needed
+    # ...
+
+if __name__ == '__main__':
+    unittest.main()

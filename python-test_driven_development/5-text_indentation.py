@@ -1,29 +1,31 @@
 #!/usr/bin/python3
+
+import doctest
+
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after each of these characters: ., ? and :
-
+    Prints a text with 2 new lines after each '.', '?', and ':'
+    
     Args:
-        text: A string.
-
+        text (str): The input text.
+        
     Raises:
-        TypeError: If text is not a string.
+        TypeError: If the input is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-    separators = ['.', '?', ':']
-
-    lines = []
-    current_line = ""
+    
+    punctuation_chars = ['.', '?', ':']
+    
     for char in text:
-        current_line += char
-        if char in separators:
-            lines.append(current_line.strip())
-            current_line = ""
+        print(char, end='')
+        if char in punctuation_chars:
+            print('\n')
 
-    if current_line:
-        lines.append(current_line.strip())
+def load_tests(loader, tests, ignore):
+    tests.addTests(doctest.DocTestSuite())
+    return tests
 
-    for line in lines:
-        print(line)
+if __name__ == "__main__":
+    import unittest
+    unittest.main()
