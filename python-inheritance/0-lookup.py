@@ -1,10 +1,12 @@
+#!/usr/bin/python3
 """
-This module provides a function for looking up attributes and methods of an object.
+Module provides function for looking up attributes and methods of an object.
 """
+
 
 def lookup(obj):
     """
-    This function takes an object as input and returns a list of its attributes and methods.
+    Function takes object as input and returns a list of attributes and methods.
 
     :param obj: The input object.
     :return: A list containing attributes and methods of the input object.
