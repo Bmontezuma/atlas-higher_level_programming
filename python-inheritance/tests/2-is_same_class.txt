@@ -1,0 +1,2 @@
+$ python3 -m doctest ./tests/2-is_same_class.txt
+1 is an instance of the class int
