@@ -21,6 +21,12 @@ Usage:
 class MyList(list):
     """
     MyList class inherits from list and provides additional functionality.
+
+    Attributes:
+        No additional attributes.
+
+    Methods:
+        print_sorted(): Print the list in ascending sorted order.
     """
 
     def print_sorted(self):
