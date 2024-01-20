@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 def class_to_json(obj):
     """
     Returns a dictionary for JSON serialization of an object.
