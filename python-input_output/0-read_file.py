@@ -11,7 +11,7 @@ def read_file(filename=""):
     Returns:
     None
 
-    Example:
+    Examples:
     >>> read_file("example.txt")
     This function reads a file and prints its content to the standard output.
     """
