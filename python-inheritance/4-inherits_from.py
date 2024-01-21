@@ -3,7 +3,7 @@
 Module: 4-inherits_from
 
 This module defines a function inherits_from that checks if an object is an
-instance of a class that inherited (directly or indirectly) from the specified class.
+instance of class inherited (directly or indirectly) from the specified class.
 
 Usage:
     inherits_from = __import__('4-inherits_from').inherits_from
@@ -20,7 +20,7 @@ Usage:
 
 def inherits_from(obj, a_class):
     """
-    Check if an object is an instance of a class that inherited (directly or indirectly)
+    Check if object is instance of class inherited (directly or indirectly)
     from the specified class.
 
     Args:
@@ -28,6 +28,6 @@ def inherits_from(obj, a_class):
         a_class: The specified class.
 
     Returns:
-        True if obj is an instance of a class that inherited from a_class, otherwise False.
+        True if obj is instance of class inherited from a_class.
     """
     return isinstance(obj, a_class) and type(obj) is not a_class
