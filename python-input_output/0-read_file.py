@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+"""
+Defines function to read content of file and print it to the standard output.
+"""
 
 
 def read_file(filename=""):
     """
-    A simple module for reading the content of a file and printing it to the standard output.
+    A module for reading content of file and print it to the standard output.
 
     Parameters:
-    - filename (str): The name of the file to be read. Default is an empty string.
+    - filename (str): The name of the file to be read. Default is empty string.
 
     Returns:
     None
