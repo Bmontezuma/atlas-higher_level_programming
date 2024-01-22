@@ -1,20 +1,19 @@
 #!/usr/bin/python3
+"""
+Module for converting a JSON string to a Python object.
+"""
+
 import json
 
 
 def from_json_string(my_str):
     """
-    Returns a Python data structure represented by a JSON string.
+    Returns an object represented by a JSON string.
 
-    Parameters:
-    - my_str (str): JSON string to be converted.
+    Args:
+        my_str (str): The JSON string to be converted.
 
     Returns:
-    object: Python data structure.
-
-    Example:
-    >>> s_my_list = "[1, 2, 3]"
-    >>> from_json_string(s_my_list)
-    [1, 2, 3]
+        object: The Python object represented by the JSON string.
     """
     return json.loads(my_str)
