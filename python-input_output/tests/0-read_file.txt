@@ -1,15 +1,6 @@
-# Test cases for read_file function
+$ cat my_file_0.txt
+We offer a truly innovative approach to education:
+focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
 
-# Test case 1: Empty filename (default)
->>> read_file()
-None
-
-# Test case 2: Read a file with content
->>> read_file("example.txt")
-This function reads a file and prints its content to the standard output.
-
-# Test case 3: Nonexistent file
->>> read_file("nonexistent_file.txt")
-Traceback (most recent call last):
-    ...
-FileNotFoundError: [Errno 2] No such file or directory
+A school every software engineer would have dreamt of!
+$ python3 -m doctest -v ./python-input_output/0-read_file.py
