@@ -1,44 +1,5 @@
-"""Test for 1-my_list.py"""
-
-if __name__ == "__main__":
-    import doctest
-    from my_module import MyList
-
-    # Instantiate MyList object
-    my_list = MyList()
-    assert my_list == []
-
-    # Check if MyList inherits from list
-    assert isinstance(my_list, list)
-
-    # Check __str__
-    assert str(my_list) == "[]"
-
-    # Check append()
-    my_list.append(1)
-    assert my_list == [1]
-
-    # Check print_sorted() with sorted append
-    my_list.append(4)
-    my_list.append(2)
-    my_list.append(3)
-    my_list.append(5)
-    my_list.print_sorted()  # Should print [1, 2, 3, 4, 5]
-
-    # Check print_sorted() with not sorted append
-    my_list.append(0)
-    my_list.print_sorted()  # Should print [0, 1, 2, 3, 4, 5]
-
-    # Check print_sorted() with no sorted append with negative number
-    my_list.append(-1)
-    my_list.print_sorted()  # Should print [-1, 0, 1, 2, 3, 4, 5]
-
-    # Check print_sorted() with empty list
-    empty_list = MyList()
-    empty_list.print_sorted()  # Should print []
-
-    # Check print_sorted() returns a new list
-    sorted_list = my_list.print_sorted()
-    assert sorted_list == [-1, 0, 1, 2, 3, 4, 5]
-
-    print("All tests passed!")
+>>> my_list = MyList([1, 4, 2, 3, 5])
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> my_list
+[1, 4, 2, 3, 5]

@@ -1,16 +1,18 @@
-#!/usr/bin/python3
-"""
-Module for Square class
-"""
-from __import__('10-square').Square
+# 11-square.py
+from rectangle import Rectangle
 
 
-class Square(Square):
-    """
-    Square class, inherits from Square (10-square)
-    """
+class Square(Rectangle):
+    """Represents a square."""
+
+    def __init__(self, size):
+        """Initializes a new instance of the Square class."""
+        super().__init__(size, size)
+
+    def area(self):
+        """Returns the area of the square."""
+        return self.width ** 2
+
     def __str__(self):
-        """
-        Returns a string representation of the square
-        """
-        return "[Square] {}/{}".format(self.width, self.height)
+        """Returns a string representation of the square."""
+        return f"[Square] {self.width}/{self.height}"

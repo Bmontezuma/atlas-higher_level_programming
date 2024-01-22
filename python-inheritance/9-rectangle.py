@@ -1,42 +1,28 @@
 #!/usr/bin/python3
-"""
-Module: 9-rectangle
-
-This module defines a class Rectangle that inherits from BaseGeometry.
-
-Usage:
-    Rectangle = __import__('9-rectangle').Rectangle
-
-    r = Rectangle(3, 5)
-
-    print(r)
-    print(r.area())
-"""
+from base_geometry import BaseGeometry
 
 
-class BaseGeometry:
+class Rectangle(BaseGeometry):
     """
-    A class representing BaseGeometry.
-
-    Public Methods:
-    - area(self): Raises Exception with message area() is not implemented.
-    - integer_validator(self, name, value): Validates the integer value.
+    This class represents a rectangle. It inherits from BaseGeometry.
     """
+
+    def __init__(self, width, height):
+        """
+        Initializes a Rectangle object with width and height.
+        Both width and height must be positive integers.
+        """
+        self.__width = self.integer_validator("width", width)
+        self.__height = self.integer_validator("height", height)
+
     def area(self):
         """
-        Raises an Exception with the message area() is not implemented.
+        Returns the area of the rectangle.
         """
-        raise Exception("area() is not implemented")
+        return self.__width * self.__height
 
-    def integer_validator(self, name, value):
+    def __str__(self):
         """
-        Validates the integer value.
-
-        Args:
-            name (str): The name of the value.
-            value: The value to validate.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than or equal to
+        Returns a string representation of the rectangle.
         """
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
