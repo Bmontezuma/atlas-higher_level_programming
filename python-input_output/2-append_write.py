@@ -1,21 +1,19 @@
 #!/usr/bin/python3
+"""
+Module for appending text to a text file.
+"""
 
 
 def append_write(filename="", text=""):
     """
-    Appends text to a file and returns the added character count.
+    Appends given text to text file and returns number of characters.
 
-    Parameters:
-    - filename (str): Target file. Default is an empty string.
-    - text (str): String to append. Default is an empty string.
+    Args:
+        filename (str): The name of the text file.
+        text (str): The text to be appended to the file.
 
     Returns:
-    int: Number of characters added.
-
-    Example:
-    >>> append_write("file_append.txt", "This School is so cool!\n")
-    24
+        int: The number of characters added to the file.
     """
     with open(filename, 'a', encoding='utf-8') as file:
-        file.write(text)
-        return len(text)
+        return file.write(text)
