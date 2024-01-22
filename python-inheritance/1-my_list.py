@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module defines a custom list class called MyList.
+"""
 
 
 class MyList:
