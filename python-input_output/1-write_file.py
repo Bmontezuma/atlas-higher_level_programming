@@ -1,11 +1,18 @@
 #!/usr/bin/python3
+"""
+Module defines custom list class, MyList, that inherits from built-in list class in Python.
+It includes a method, print_sorted, that prints the list in ascending order.
+"""
 
 
-def write_file(filename="", text=""):
+class MyList(list):
     """
-    This function writes string to file and returns number characters written.
+    Custom list class that includes a method for printing the list in ascending order.
     """
-    with open(filename, 'w', encoding='utf-8') as file:
-        nb_characters = len(text)
-        file.write(text)
-        return nb_characters
+
+    def print_sorted(self):
+        """
+        Print the list in ascending order.
+        """
+        sorted_list = sorted(self)
+        print(sorted_list)
