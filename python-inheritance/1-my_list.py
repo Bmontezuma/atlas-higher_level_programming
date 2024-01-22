@@ -9,7 +9,7 @@ class MyList:
     """
     Custom List Class
 
-    Represents custom list with methods to append items and print sorted list.
+    Class represents list with methods to append items and print sorted list.
     """
 
     def __init__(self):
@@ -47,8 +47,8 @@ class MyList:
         >>> ml.print_sorted()
         [1, 2, 3, 4, 5]
         """
-        self._list.sort()
-        print(self._list)
+        sorted_list = sorted(self._list)
+        print(sorted_list)
 
     def __str__(self):
         """
