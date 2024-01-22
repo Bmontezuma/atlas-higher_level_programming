@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module defines a custom list class called MyList.
 """
@@ -8,7 +9,7 @@ class MyList:
     """
     Custom List Class
 
-    Class represents list with methods to append items and print sorted list.
+    Represents custom list with methods to append items and print sorted list.
     """
 
     def __init__(self):
@@ -48,3 +49,18 @@ class MyList:
         """
         self._list.sort()
         print(self._list)
+
+    def __str__(self):
+        """
+        Return the string representation of the list.
+
+        >>> ml = MyList()
+        >>> ml.append(1)
+        >>> ml.append(4)
+        >>> ml.append(2)
+        >>> ml.append(3)
+        >>> ml.append(5)
+        >>> print(ml)
+        [1, 4, 2, 3, 5]
+        """
+        return str(self._list)
