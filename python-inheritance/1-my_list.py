@@ -1,23 +1,47 @@
 #!/usr/bin/python3
-"""Module that defines a class MyList"""
 
 
-class MyList(list):
-    """A class that inherits from list"""
+class MyList:
+    """
+    Custom List Class
+
+    Class represents list with methods to append items and print sorted list.
+    """
+
+    def __init__(self):
+        """
+        Initialize MyList with an empty list.
+
+        >>> ml = MyList()
+        >>> assert ml._list == []
+        """
+        self._list = []
+
+    def append(self, item):
+        """
+        Append an item to the list.
+
+        Args:
+            item (int): Item to append to the list.
+
+        >>> ml = MyList()
+        >>> ml.append(1)
+        >>> assert ml._list == [1]
+        """
+        self._list.append(item)
 
     def print_sorted(self):
-        """Prints the list in ascending order"""
-        print(sorted(self))
+        """
+        Sort the list and print it.
 
-
-if __name__ == "__main__":
-    # Test the MyList class
-    my_list = MyList()
-    my_list.append(1)
-    my_list.append(4)
-    my_list.append(2)
-    my_list.append(3)
-    my_list.append(5)
-    print(my_list)
-    my_list.print_sorted()
-    print(my_list)
+        >>> ml = MyList()
+        >>> ml.append(1)
+        >>> ml.append(4)
+        >>> ml.append(2)
+        >>> ml.append(3)
+        >>> ml.append(5)
+        >>> ml.print_sorted()
+        [1, 2, 3, 4, 5]
+        """
+        self._list.sort()
+        print(self._list)
