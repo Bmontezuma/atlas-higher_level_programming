@@ -1,7 +1,12 @@
 import sys
 import unittest
 from io import StringIO
-from ..rectangle import Rectangle
+
+# Add the parent directory of the models package to the Python path
+sys.path.append('../')
+
+# Now import Rectangle
+from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     def test_display(self):
