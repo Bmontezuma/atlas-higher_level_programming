@@ -1,11 +1,22 @@
 #!/usr/bin/python3
 """Rectangle module"""
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class, inherits from Base"""
+    """Rectangle class, inherits from Base
+
+
+     >>> r = Rectangle(10, 12, 0, 0)
+    >>> r.display()
+    >>> r = Rectangle(10, 12, 1, 0)
+    >>> r.display()
+    >>> r = Rectangle(10, 12, 0, 1)
+    >>> r.display()
+    >>> r = Rectangle(5, 4, 4, 3)
+    >>> r.display()
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize Rectangle instance"""
@@ -81,10 +92,11 @@ class Rectangle(Base):
 
     def display(self):
         """Print the rectangle with '#' characters"""
-    for _ in range(self.__y):
-        print()
-    for _ in range(self.__height):
-        print(' ' * self.__x + '#' * self.__width)
+        for _ in range(self.__y):
+            print()
+        for _ in range(self.__height):
+            print(' ' * self.__x, end='')
+            print('#' * self.__width)
 
     def __str__(self):
         """Return the string representation of the rectangle"""
