@@ -4,6 +4,9 @@ This module defines the Base class.
 """
 
 
+import json
+
+
 class Base:
     """
     Represents the base class.
@@ -44,3 +47,29 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        Return the JSON string representation of list_dictionaries.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+            str: The JSON string representation of list_dictionaries.
+
+        Examples:
+            >>> Base.to_json_string([{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}])
+            '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+
+            >>> Base.to_json_string([])
+            '[]'
+
+            >>> Base.to_json_string(None)
+            '[]'
+        """
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)

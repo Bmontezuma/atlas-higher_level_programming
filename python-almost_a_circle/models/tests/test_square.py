@@ -29,9 +29,9 @@ class TestSquare(unittest.TestCase):
         s.update(10, 2)
         self.assertEqual(str(s), "[Square] (10) 2/3 - 5")
         s.update(10, 2, 4)
-        self.assertEqual(str(s), "[Square] (10) 2/3 - 5")
+        self.assertEqual(str(s), "[Square] (10) 2/4 - 5")
         s.update(10, 2, 4, 5)
-        self.assertEqual(str(s), "[Square] (10) 2/3 - 5")
+        self.assertEqual(str(s), "[Square] (10) 2/4 - 5")
 
     def test_to_dictionary(self):
         s = Square(5, 2, 3, 1)
@@ -39,4 +39,3 @@ class TestSquare(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
