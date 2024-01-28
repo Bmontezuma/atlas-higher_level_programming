@@ -112,6 +112,9 @@ class Rectangle:
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
+                if i == 0:
+                    # Skip updating ID if only ID is provided as an argument
+                    continue
                 setattr(self, attrs[i], arg)
 
     def __str__(self):
