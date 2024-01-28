@@ -99,6 +99,21 @@ class Rectangle:
                 elif key in ["width", "height", "x", "y"]:
                     setattr(self, key, value)
 
+    def to_dictionary(self):
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
     def __str__(self):
         """Return the string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
