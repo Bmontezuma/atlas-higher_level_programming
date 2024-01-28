@@ -1,40 +1,13 @@
-#!/usr/bin/python3
-"""
-This module defines the Rectangle class representing a rectangle.
-"""
-
-
 class Rectangle:
-    """
-    Rectangle class represents a rectangle.
-    """
+    """Class Rectangle"""
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Initializes a Rectangle object.
-
-        Args:
-            width (int): Width of the rectangle.
-            height (int): Height of the rectangle.
-            x (int): x-coordinate of the rectangle's position.
-            y (int): y-coordinate of the rectangle's position.
-            id (int, optional): Identifier of the rectangle.
-        """
+    def __init__(self, width=0, height=0, x=0, y=0, id=None):
+        """Initialize Rectangle instance."""
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         self.id = id
-
-    def __str__(self):
-        """
-        Returns a string representation of the rectangle.
-
-        Returns:
-            str: String representation of the rectangle.
-        """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
 
     @property
     def width(self):
@@ -102,20 +75,23 @@ class Rectangle:
 
     def display(self):
         """Print the rectangle with '#' characters."""
-        for _ in range(self.__y):
+        for i in range(self.__y):
             print()
-        for _ in range(self.__height):
+        for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update attributes with arguments."""
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
-                if i == 0:
-                    self.id = arg
-                else:
-                    setattr(self, attrs[i], arg)
+                setattr(self, attrs[i], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    setattr(self, key, value)
+                elif key in ["width", "height", "x", "y"]:
+                    setattr(self, key, value)
 
     def __str__(self):
         """Return the string representation of the rectangle."""
