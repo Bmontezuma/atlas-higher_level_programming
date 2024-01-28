@@ -4,6 +4,7 @@ Module containing the Square class.
 """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """
     Represents a square.
@@ -28,7 +29,7 @@ class Square(Rectangle):
         Returns:
             str: String of the square.
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square]".format(self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
