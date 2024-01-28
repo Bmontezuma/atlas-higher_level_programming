@@ -1,17 +1,34 @@
-#!/usr/bin/python3
-from base import Base
-
-
-class Rectangle(Base):
-    """Rectangle class, inherits from Base."""
+class Rectangle:
+    """
+    Rectangle class represents a rectangle.
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize Rectangle instance."""
-        super().__init__(id)
+        """
+        Initializes a Rectangle object.
+
+        Args:
+            width (int): Width of the rectangle.
+            height (int): Height of the rectangle.
+            x (int): x-coordinate of the rectangle's position.
+            y (int): y-coordinate of the rectangle's position.
+            id (int, optional): Identifier of the rectangle.
+        """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        self.id = id
+
+    def __str__(self):
+        """
+        Returns a string representation of the rectangle.
+
+        Returns:
+            str: String representation of the rectangle.
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
 
     @property
     def width(self):
@@ -82,13 +99,14 @@ class Rectangle(Base):
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
-            print(' ' * self.__x + '#' * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args):
         """Update attributes with arguments."""
-        attrs = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            setattr(self, attrs[i], arg)
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
 
     def __str__(self):
         """Return the string representation of the rectangle."""
