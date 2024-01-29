@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 import json
+
 
 class Rectangle:
     """
@@ -12,12 +14,12 @@ class Rectangle:
         id (int): The identifier of the rectangle.
 
     Methods:
-        __init__(self, width, height, x=0, y=0, id=None): Initializes Rectangle instance.
+        __init__: Initializes Rectangle instance.
         area(self): Calculate and return the area of the rectangle.
         display(self): Print the rectangle with '#' characters.
         update(self, *args, **kwargs): Update attributes with arguments.
         to_dictionary(self): Returns dictionary representation of rectangle.
-        to_json_string(list_dictionaries): Returns JSON representation of list_dictionaries.
+        to_json_string(list_dictionaries): Returns JSON of list_dictionaries.
         __str__(self): Return the string representation of the rectangle.
     """
 
@@ -96,4 +98,3 @@ class Rectangle:
         """Return the string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
-
