@@ -23,8 +23,8 @@ def main():
     # Creating a cursor object using cursor() method
     cursor = db.cursor()
 
-    # Executing SQL query to select states starting with 'N'
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    # Executing SQL query to select states starting with 'N' or 'n' (case-insensitive)
+    query = "SELECT * FROM states WHERE name LIKE 'N%' OR name LIKE 'n%' ORDER BY id"
     cursor.execute(query)
 
     # Fetching all rows from the result set
