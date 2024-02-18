@@ -1,6 +1,5 @@
-<p align="center">
-![Thanost](https://media.giphy.com/media/npszbmF6GwHSw/giphy.gif)
-</p>
+![Alt Text](https://media.giphy.com/media/npszbmF6GwHSw/giphy.gif)
+
 
 # ***Author***
 
