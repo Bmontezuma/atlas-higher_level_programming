@@ -36,8 +36,11 @@ def main():
     rows = cursor.fetchall()
 
     # Displaying results
-    for row in rows:
-        print(row)
+    if not rows:
+        print("No cities found in the database.")
+    else:
+        for row in rows:
+            print(row)
 
     # Closing cursor and database connection
     cursor.close()
