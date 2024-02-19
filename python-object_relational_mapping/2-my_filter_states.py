@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Displays all values in the states table of hbtn_0e_0_usa where name matches
-the argument.
-"""
+"""Displays all values in the states table where name matches the argument."""
 
 import sys
 import MySQLdb
@@ -20,9 +17,11 @@ if __name__ == "__main__":
     # Create a cursor object
     cur = db.cursor()
 
-    # Execute the query using user input
-    cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-                (sys.argv[4],))
+    # Create SQL query using format with user input
+    sql_query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4])
+
+    # Execute the query
+    cur.execute(sql_query)
 
     # Fetch all the rows
     rows = cur.fetchall()
