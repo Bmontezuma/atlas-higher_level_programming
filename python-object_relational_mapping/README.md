@@ -69,7 +69,6 @@ The biggest difficulty with ORM is: The syntax!
 
 Indeed, all of them have the same type of syntax, but not always. Please read tutorials and don’t read the entire documentation before starting, just jump on it if you don’t get something.
 
-
 Install MySQL 8.0 on Ubuntu 20.04 LTS
 =======================================
 
