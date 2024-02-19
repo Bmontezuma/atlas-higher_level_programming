@@ -3,13 +3,18 @@
 Script that lists all cities from the database hbtn_0e_4_usa.
 """
 
+
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
+def main():
     # Connect to MySQL server
     db = MySQLdb.connect(
-        host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
     )
 
     # Create a cursor object
@@ -24,8 +29,15 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     # Print the results
-    [print(city) for city in rows]
+    if rows:
+        [print(city) for city in rows]
+    else:
+        print("Empty")
 
     # Close cursor and connection
     cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    main()
