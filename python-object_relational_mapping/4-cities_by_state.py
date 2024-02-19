@@ -22,8 +22,13 @@ def main(user, password, db_name):
         db_name (str): The name of the database.
     """
     try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=user,
-                             passwd=password, db=db_name)
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=user,
+            passwd=password,
+            db=db_name
+        )
         cursor = db.cursor()
         cursor.execute("""SELECT cities.id, cities.name, states.name FROM cities
                           INNER JOIN states ON cities.state_id = states.id
@@ -37,7 +42,7 @@ def main(user, password, db_name):
         print(f"Error {e.args[0]}: {e.args[1]}")
 
 if __name__ == "__main__":
-    if len(sys.argv) !=  4:
+    if len(sys.argv) != 4:
         print("Usage: ./4-cities_by_state.py <mysql_username> <mysql_password> <database_name>")
         sys.exit(1)
 
