@@ -1,13 +1,7 @@
--- Task: List all privileges of MySQL users user_0d_1 and user_0d_2 on localhost
+-- Script Description: Lists all privileges of the MySQL users user_0d_1 and user_0d_2 on localhost
 
--- Create users if they don't exist
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
-
--- Grant privileges to users
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
--- (Repeat GRANT statements for user_0d_2 if needed)
-
--- List privileges
+-- Query to list privileges of user_0d_1
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
+
+-- Query to list privileges of user_0d_2
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
