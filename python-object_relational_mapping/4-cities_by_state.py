@@ -1,45 +1,41 @@
 #!/usr/bin/python3
 """
-Script that lists all cities from the database hbtn_0e_4_usa.
+List all cities from the hbtn_0e_4_usa database.
+
+Connects to the MySQL server on localhost:3306, executes the query to fetch
+cities sorted by cities.id, and prints the results. Requires MySQLdb module.
 """
 
-
-import sys
 import MySQLdb
+import sys
 
-def main():
-    # Connect to MySQL server
-    db = MySQLdb.connect(
-        host="localhost",
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        port=3306
-    )
+def main(user, password, db_name):
+    """
+    Connect to the MySQL server and execute the SQL query to fetch cities.
 
-    # Create a cursor object
-    cur = db.cursor()
-
-    # Execute the query to select cities
-    cur.execute(
-        "SELECT `id`, `name`, (SELECT `name` FROM `states` "
-        "WHERE `cities`.`state_id` = `states`.`id`) AS `state_name` "
-        "FROM `cities` ORDER BY `id`"
-    )
-
-    # Fetch all the rows
-    rows = cur.fetchall()
-
-    # Print the results
-    if rows:
-        [print(city) for city in rows]
-    else:
-        print("Empty")
-
-    # Close cursor and connection
-    cur.close()
-    db.close()
-
+    Args:
+        user (str): The MySQL username.
+        password (str): The MySQL password.
+        db_name (str): The name of the database.
+    """
+    try:
+        db = MySQLdb.connect(host="localhost", port=3306, user=user, passwd=password, db=db_name)
+        cursor = db.cursor()
+        cursor.execute("""SELECT cities.id, cities.name, states.name
+                          FROM cities
+                          INNER JOIN states ON cities.state_id = states.id
+                          ORDER BY cities.id ASC""")
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
+        cursor.close()
+        db.close()
+    except MySQLdb.Error as e:
+        print(f"Error {e.args[0]}: {e.args[1]}")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) != 4:
+        print("Usage: script.py <mysql_username> <mysql_password> <database_name>")
+        sys.exit(1)
+
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
