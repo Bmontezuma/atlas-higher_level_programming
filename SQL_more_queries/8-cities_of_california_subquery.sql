@@ -1,15 +1,11 @@
--- Retrieve the state_id for California
-SELECT id 
-FROM states 
-WHERE name = 'California';
+-- Script Description: Lists all the cities of California found in the database hbtn_0d_usa without using JOIN
 
--- Use the retrieved state_id to select cities of California
-SELECT id, name
+-- Query to select cities of California using a subquery
+SELECT cities.id, cities.name
 FROM cities
-WHERE state_id = (
-    -- Subquery to get the state_id for California
-    SELECT id 
-    FROM states 
+WHERE cities.state_id = (
+    SELECT id
+    FROM states
     WHERE name = 'California'
 )
-ORDER BY id ASC;
+ORDER BY cities.id;
