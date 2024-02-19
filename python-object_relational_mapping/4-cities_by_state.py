@@ -22,7 +22,9 @@ def main():
 
     # Execute the query to select cities
     cur.execute(
-        "SELECT `id`, `name`, (SELECT `name` FROM `states` WHERE `cities`.`state_id` = `states`.`id`) AS `state_name` FROM `cities` ORDER BY `id`"
+        "SELECT `id`, `name`, (SELECT `name` FROM `states` "
+        "WHERE `cities`.`state_id` = `states`.`id`) AS `state_name` "
+        "FROM `cities` ORDER BY `id`"
     )
 
     # Fetch all the rows
