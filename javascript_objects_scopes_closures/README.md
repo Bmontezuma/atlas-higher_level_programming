@@ -31,7 +31,7 @@
   *`JavaScript is amazing because it is a versatile and powerful programming language that can be used for both client-side and server-side development. It has a vast ecosystem of libraries and frameworks, making it suitable for a wide range of applications.`*
   
   - ***How to create an object in JavaScript:*** 
-  *`In JavaScript, you can create an object using object literal notation ***`{}`***, constructor functions, or the ***`class`*** keyword introduced in ECMAScript 6.`*
+  *`In JavaScript, you can create an object using object literal notation `{}`, constructor functions, or the `class` keyword introduced in ECMAScript 6.`*
   
   - ***What ***`this`*** means:*** 
   *`In JavaScript, the `this` keyword refers to the object that is currently executing the code. Its value depends on how a function is called.`*
