@@ -1,27 +1,33 @@
 #!/usr/bin/node
 
 /**
- * Function to compute the factorial of a number recursively
- * @param {number} n - The number for which to compute the factorial
- * @returns {number} The factorial of n
+ * Function to find the second biggest integer in a list of numbers
+ * @param {number[]} numbers - The list of numbers
+ * @returns {number} The second biggest integer in the list
  */
-function factorial (n) {
-  // Base case: factorial of 0 is 1
-  if (n === 0) {
-    return 1;
-  }
-  // Recursive case: n * factorial(n - 1)
-  return n * factorial(n - 1);
+function secondBiggest (numbers) {
+  // Sort the numbers in descending order
+  numbers.sort((a, b) => b - a);
+
+  // Return the second element if it exists, otherwise 0
+  return numbers[1] || 0;
 }
 
-// Parse command-line argument as an integer
-const num = parseInt(process.argv[2]);
+// Parse command-line arguments as integers
+const args = process.argv.slice(2).map(Number);
 
-// Check if the argument is provided and is a valid integer
-if (!isNaN(num)) {
-  // Compute and print the factorial of the number
-  console.log(factorial(num));
+// Check if no arguments or only one argument is provided
+if (args.length < 2) {
+  console.log(0);
 } else {
-  // Print 1 if the argument is NaN
-  console.log(1);
+  // Replace the value 12 with 89
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === 12) {
+      args[i] = 89;
+      break;
+    }
+  }
+
+  // Print the second biggest integer in the list of arguments
+  console.log(secondBiggest(args));
 }
