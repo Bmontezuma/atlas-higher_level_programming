@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const fs = require('fs');
 
 // Check if correct number of arguments are passed
@@ -17,5 +15,5 @@ fs.writeFile(filePath, content, { encoding: 'utf-8' }, (err) => {
     console.error(err);
     return;
   }
-  console.log(`Content has been written to ${filePath}`);
+  console.log(content); // Output the content directly
 });
