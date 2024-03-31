@@ -1,25 +1,21 @@
 #!/usr/bin/node
 
-const fs = require('fs').promises;
+// Import 'fs' module for file manipulation
+const fs = require('fs');
 
-// Check if correct number of arguments are passed
-if (process.argv.length !== 4) {
-  console.error('Usage: node 1-writeme.js <file_path> <string_to_write>');
+// Check if the correct number of arguments are provided
+if (process.argv.length < 4) {
+  console.error('Usage: node writeToFile.js <filePath> <string>');
   process.exit(1);
 }
 
-// Extract arguments
-const [, , filePath, content] = process.argv;
+// Destructure filePath and string from the arguments
+const [, , filePath, string] = process.argv;
 
-// Write content to file
-async function writeToFile () {
-  try {
-    await fs.writeFile(filePath, content, { encoding: 'utf-8' });
-    const data = await fs.readFile(filePath, { encoding: 'utf-8' });
-    console.log(data);
-  } catch (err) {
-    console.error(err);
+// Attempt to write the string to the file
+fs.writeFile(filePath, string, 'utf-8', (err) => {
+  if (err) {
+    // If an error occurred, print the error object
+    console.error('Error writing to file:', err);
   }
-}
-
-writeToFile();
+});
