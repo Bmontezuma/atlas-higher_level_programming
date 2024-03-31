@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const fs = require('fs');
 
 // Check if correct number of arguments are passed
